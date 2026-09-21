@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- LESSON 1: This line makes the page responsive on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Workshop Registration</title>
+
+  <style>
+    /* ------------------------------------------------------------
+       LESSON 2: CSS variables (custom properties)
+       ------------------------------------------------------------ */
+    :root {
+      --bg: #e7eef0;
+      --surface: #ffffff;
+      --ink: #14213d;
+      --muted: #55627a;
+      --accent: #0f766e;
+      --accent-dark: #0a5750;
+      --border: #c5d0d6;
+      --error: #b3261e;
+      --radius: 10px;
+    }
+
+    /* ------------------------------------------------------------
+       LESSON 3: Box Sizing Reset
+       ------------------------------------------------------------ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.5;
+      min-height: 100vh;
+      padding: 16px;
+    }
+
+    /* ------------------------------------------------------------
+       LESSON 4: Mobile-First Layout
+       ------------------------------------------------------------ */
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(20, 33, 61, 0.12);
+    }
+
+    /* Left panel: title and details */
+    .intro {
+      background: var(--accent);
+      color: #fff;
+      padding: 28px 24px;
+    }
+
+    .intro h1 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+
+    .intro p {
+      opacity: 0.92;
+      margin-bottom: 16px;
+    }
+
+    .intro ul {
+      list-style: none;
+    }
+
+    .intro li {
+      padding: 8px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Right panel: the form */
+    .form-area {
+      padding: 28px 24px;
+    }
+
+    .form-area h2 {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    /* ------------------------------------------------------------
+       LESSON 5: Form styling
+       ------------------------------------------------------------ */
+    .field {
+      margin-bottom: 18px;
+    }
+
+    label,
+    legend {
+      display: block;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 11px 12px;
+      font: inherit;
+      color: var(--ink);
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* Focus States */
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(15, 118, 110, 0.4);
+      outline-offset: 1px;
+      border-color: var(--accent);
+    }
+
+    /* Validation indicator */
+    input:not(:placeholder-shown):invalid {
+      border-color: var(--error);
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+    }
+
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .options input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--accent);
+    }
+
+    /* Submit button */
+    button {
+      width: 100%;
+      padding: 13px 20px;
+      font: inherit;
+      font-weight: 600;
+      color: #fff;
+      background: var(--accent);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button:hover {
+      background: var(--accent-dark);
+    }
+
+    /* Submission feedback */
+    .success {
+      display: none;
+      margin-top: 20px;
+      padding: 16px;
+      background: #e3f4f1;
+      border-left: 5px solid var(--accent);
+      border-radius: 8px;
+    }
+
+    .success.show {
+      display: block;
+    }
+
+    .success dl {
+      margin-top: 10px;
+    }
+
+    .success dt {
+      font-weight: 600;
+      float: left;
+      clear: left;
+      margin-right: 6px;
+    }
+
+    .success dd {
+      overflow-wrap: anywhere;
+    }
+
+    /* ------------------------------------------------------------
+       LESSON 6: Media Queries for Desktop / Tablets
+       ------------------------------------------------------------ */
+    @media (min-width: 700px) {
+      body {
+        padding: 40px 24px;
+        display: flex;
+        align-items: center;
+      }
+
+      .page {
+        display: grid;
+        grid-template-columns: 1fr 1.6fr;
+        width: 100%;
+      }
+
+      .intro,
+      .form-area {
+        padding: 40px 36px;
+      }
+
+      .row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      button {
+        width: auto;
+        padding-inline: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- LEFT PANEL -->
+    <section class="intro">
+      <h1>Web Basics Workshop</h1>
+      <p>A hands-on session where you build your first responsive web page from scratch.</p>
+      <ul>
+        <li>Saturday, 10:00 AM to 1:00 PM</li>
+        <li>Computer Lab 2</li>
+        <li>Bring a laptop, we provide the rest</li>
+      </ul>
+    </section>
+
+    <!-- RIGHT PANEL (FORM) -->
+    <section class="form-area">
+      <h2>Reserve your seat</h2>
+
+      <form id="signup" action="#" method="post">
+
+        <div class="row">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" placeholder="Priya Sharma" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="priya@example.com" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="9876543210"
+                   pattern="[0-9]{10}" title="Enter a 10-digit phone number" required>
+          </div>
+
+          <div class="field">
+            <label for="course">Year of study</label>
+            <select id="course" name="year" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>First year</option>
+              <option>Second year</option>
+              <option>Third year</option>
+              <option>Final year</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Radio group -->
+        <fieldset class="field">
+          <legend>Your experience</legend>
+          <div class="options">
+            <label><input type="radio" name="level" value="Beginner" required> Beginner</label>
+            <label><input type="radio" name="level" value="Some HTML"> Some HTML</label>
+            <label><input type="radio" name="level" value="Comfortable"> Comfortable</label>
+          </div>
+        </fieldset>
+
+        <!-- Checkboxes -->
+        <fieldset class="field">
+          <legend>What do you want to learn?</legend>
+          <div class="options">
+            <label><input type="checkbox" name="topics" value="HTML"> HTML</label>
+            <label><input type="checkbox" name="topics" value="CSS"> CSS</label>
+            <label><input type="checkbox" name="topics" value="Responsive design"> Responsive design</label>
+          </div>
+        </fieldset>
+
+        <div class="field">
+          <label for="message">Questions for us (optional)</label>
+          <textarea id="message" name="message" placeholder="Anything you'd like us to cover?"></textarea>
+        </div>
+
+        <button type="submit">Reserve my seat</button>
+      </form>
+
+      <!-- Confirmation Box -->
+      <div class="success" id="success" role="status" aria-live="polite">
+        <strong>You're registered!</strong>
+        <dl id="summary"></dl>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    /* ------------------------------------------------------------
+       LESSON 8: Handling form submission with JavaScript
+       ------------------------------------------------------------ */
+    const form = document.getElementById("signup");
+    const success = document.getElementById("success");
+    const summary = document.getElementById("summary");
+
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const data = new FormData(form);
+      const topics = data.getAll("topics");
+
+      const rows = [
+        ["Name:", data.get("name")],
+        ["Email:", data.get("email")],
+        ["Phone:", data.get("phone")],
+        ["Year:", data.get("year")],
+        ["Experience:", data.get("level")],
+        ["Topics:", topics.length ? topics.join(", ") : "None selected"]
+      ];
+
+      summary.innerHTML = "";
+      rows.forEach(function ([label, value]) {
+        const dt = document.createElement("dt");
+        const dd = document.createElement("dd");
+        dt.textContent = label;
+        dd.textContent = value;
+        summary.append(dt, dd);
+      });
+
+      success.classList.add("show");
+      success.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      form.reset();
+    });
+  </script>
+</body>
+</html>
