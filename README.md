@@ -8,22 +8,23 @@ Welcome to my Data Structures and Algorithms practice repository in Java! This r
 
 ```text
 PA_sem5/
-├── Week-01/   # Java OOP Basics, Exceptions, Sliding Window & Two Pointers
-├── Week-03/   # Sliding Window, 2D Arrays & Array Manipulation
-├── Week-04/   # Searching Algorithms & Advanced Sliding Window
-├── Week-05/   # Sorting Algorithms & LeetCode Applications
-├── Week-06/   # QuickSort, Subsets, Recursion & Backtracking
-├── Week-07/   # Recursion Fundamentals, Substrings & Fibonacci
-├── Week-08/   # Singly & Doubly Linked Lists
-├── Week-09/   # Circular Linked Lists & Classical Problems
-└── Week-10/   # Advanced Linked List LeetCode Problems
+├── Week-01/         # Java OOP Basics, Exceptions, Sliding Window & Two Pointers
+├── Week-03/         # Sliding Window, 2D Arrays & Array Manipulation
+├── Week-04/         # Searching Algorithms & Advanced Sliding Window
+├── Week-05/         # Sorting Algorithms & LeetCode Applications
+├── Week-06/         # QuickSort, Subsets, Recursion & Backtracking
+├── Week-07/         # Recursion Fundamentals, Substrings & Fibonacci
+├── Week-08/         # Singly & Doubly Linked Lists
+├── Week-09/         # Circular Linked Lists & Classical Problems
+├── Week-10/         # Advanced Linked List LeetCode Problems
+└── Sep23PracJAVA/   # Java String & Array Practice (Sep 23)
 ```
 
 ---
 
 ## 🗓️ Weekly Topic Breakdown
 
-| Week | Key Topics Covered |
+| Week / Folder | Key Topics Covered |
 | :--- | :--- |
 | **[Week-01](./Week-01)** | OOP Principles, Exception Handling, Max Subarray Sum (Window), Two Pointer Pair Sum |
 | **[Week-03](./Week-03)** | Sliding Window (Fixed & Variable), ArrayList, Spiral Matrix, Pascal's Triangle |
@@ -34,6 +35,7 @@ PA_sem5/
 | **[Week-08](./Week-08)** | Singly Linked List, Doubly Linked List, K-Group Reverse, Design Linked List |
 | **[Week-09](./Week-09)** | Circular Linked List Operations, Count/Search/Delete, Josephus Problem |
 | **[Week-10](./Week-10)** | Fast & Slow Pointers, Floyd's Cycle Detection, Reorder List, Rotate List |
+| **[Sep23PracJAVA](./Sep23PracJAVA)** | Strings, Palindromes, Toggle Case, Longest Word, Array Merge, Prime, Fibonacci |
 
 ---
 
@@ -44,6 +46,10 @@ Compile and run any Java file directly from the command line:
 # Example: Running a Week-01 program
 javac Week-01/OOPPrinciples.java
 java -cp Week-01 OOPPrinciples
+
+# Example: Running a Sep23 practice program
+javac Sep23PracJAVA/ToggleaString.java
+java -cp Sep23PracJAVA Main
 ```
 
 Happy Coding! 💻
