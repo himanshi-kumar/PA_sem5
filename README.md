@@ -17,7 +17,8 @@ PA_sem5/
 ├── Week-08/         # Singly & Doubly Linked Lists
 ├── Week-09/         # Circular Linked Lists & Classical Problems
 ├── Week-10/         # Advanced Linked List LeetCode Problems
-└── Sep23PracJAVA/   # Java String & Array Practice (Sep 23)
+├── Sep23PracJAVA/   # Java String & Array Practice (Sep 23)
+└── 9oct_prac/       # Linked List, Stack & Queue Coding Practice (Oct 9)
 ```
 
 ---
@@ -36,6 +37,7 @@ PA_sem5/
 | **[Week-09](./Week-09)** | Circular Linked List Operations, Count/Search/Delete, Josephus Problem |
 | **[Week-10](./Week-10)** | Fast & Slow Pointers, Floyd's Cycle Detection, Reorder List, Rotate List |
 | **[Sep23PracJAVA](./Sep23PracJAVA)** | Strings, Palindromes, Toggle Case, Longest Word, Array Merge, Prime, Fibonacci |
+| **[9oct_prac](./9oct_prac)** | Reverse K-Group, Detect & Remove Cycle, Min Stack, Evaluate Postfix, Queue via 2 Stacks, Circular Queue |
 
 ---
 
@@ -47,9 +49,9 @@ Compile and run any Java file directly from the command line:
 javac Week-01/OOPPrinciples.java
 java -cp Week-01 OOPPrinciples
 
-# Example: Running a Sep23 practice program
-javac Sep23PracJAVA/ToggleaString.java
-java -cp Sep23PracJAVA Main
+# Example: Running a 9oct_prac program
+javac 9oct_prac/Reverse.java
+java -cp 9oct_prac Reverse
 ```
 
 Happy Coding! 💻
